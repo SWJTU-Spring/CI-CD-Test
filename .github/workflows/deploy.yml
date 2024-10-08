@@ -25,4 +25,4 @@ jobs:
             docker pull ${{ secrets.DOCKER_USERNAME }}/ci_test:latest
             docker stop myapp || true
             docker rm myapp || true
-            docker run -d --name myapp -p 7123:8080 ${{ secrets.DOCKER_USERNAME }}/ci_test:latest || true
+            docker run -d --name myapp -p 8080:7123 ${{ secrets.DOCKER_USERNAME }}/ci_test:latest || true
